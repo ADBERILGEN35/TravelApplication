@@ -1,13 +1,20 @@
 package com.example.travelguideapplication.view
 
-
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.example.apptravel.R
+import androidx.fragment.app.Fragment
+import com.example.apptravel.adapter.started.TravelApiAdapter
+import com.example.apptravel.adapter.tabs.TabsAdaptor
+import com.example.apptravel.databinding.FragmentStartedBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 
 class StartedFragment : Fragment() {
     private lateinit var binding: FragmentStartedBinding
-    private val startedFragmentViewModel: StartedFragmentViewModel by viewModels()
-
-    private var adapter: TravelApiAdapter = TravelApiAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

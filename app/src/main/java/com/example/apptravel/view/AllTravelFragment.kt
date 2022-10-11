@@ -4,12 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.apptravel.R
+import com.example.apptravel.adapter.started.TravelApiAdapter
+import com.example.apptravel.databinding.FragmentAllTravelBinding
+import com.example.apptravel.viewmodel.AllTravelViewModel
 
 class AllTravelFragment : Fragment() {
     private lateinit var binding: FragmentAllTravelBinding
-    private val startedFragmentViewModel: StartedFragmentViewModel by viewModels()
+    private val startedFragmentViewModel: AllTravelViewModel by viewModels()
 
     private var adapter: TravelApiAdapter = TravelApiAdapter()
 
