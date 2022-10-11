@@ -7,15 +7,18 @@
     <fragment
         android:id="@+id/startedFragment"
         android:name="com.example.travelguideapplication.view.StartedFragment"
-        android:label="StartedFragment">
+        android:label="StartedFragment" >
         <action
             android:id="@+id/action_startedFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_startedFragment_to_travelDetailFragment"
+            app:destination="@id/travelDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.travelguideapplication.view.SearchFragment"
-        android:label="SearchFragment">
+        android:name="com.example.apptravel.view.SearchFragment"
+        android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_tripFragment"
             app:destination="@id/tripFragment" />
@@ -28,38 +31,43 @@
     </fragment>
     <fragment
         android:id="@+id/tripFragment"
-        android:name="com.example.travelguideapplication.view.TripFragment"
-        android:label="TripFragment">
+        android:name="com.example.apptravel.view.TripFragment"
+        android:label="TripFragment" >
         <action
-            android:id="@+id/action_tripFragment_to_guideFragment"
+            android:id="@+id/action_tripFragment2_to_guideFragment"
             app:destination="@id/guideFragment" />
-        <argument
-            android:name="deneme"
-            app:argType="com.example.travelguideapplication.domain.model.alltravel.AllTravelItem" />
+        <action
+            android:id="@+id/action_tripFragment_to_travelDetailFragment"
+            app:destination="@id/travelDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/guideFragment"
-        android:name="com.example.travelguideapplication.view.GuideFragment"
-        android:label="GuideFragment" />
-    <fragment
-        android:id="@+id/searchResultFragment"
-        android:name="com.example.travelguideapplication.view.SearchResultFragment"
-        android:label="SearchResultFragment">
+        android:name="com.example.apptravel.view.GuideFragment"
+        android:label="GuideFragment" >
         <action
-            android:id="@+id/resultToSearch"
-            app:destination="@id/searchFragment" />
-        <argument
-            android:name="searchText"
-            app:argType="string" />
+            android:id="@+id/action_guideFragment_to_travelDetailFragment"
+            app:destination="@id/travelDetailFragment" />
+        <action
+            android:id="@+id/action_guideFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
     </fragment>
     <fragment
         android:id="@+id/travelDetailFragment"
-        android:name="com.example.travelguideapplication.view.TravelDetailFragment"
-        android:label="TravelDetailFragment">
+        android:name="com.example.apptravel.view.TravelDetailFragment"
+        android:label="TravelDetailFragment" >
         <argument
-            android:name="deneme"
-            app:argType="com.example.travelguideapplication.domain.model.alltravel.AllTravelItem" />
+            android:name="travelItem"
+            app:argType="com.example.apptravel.domain.model.AllTravelItem" />
     </fragment>
-
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.example.apptravel.view.SearchResultFragment"
+        android:label="SearchResultFragment" >
+        <argument
+            android:name="searchText"
+            app:argType="string" />
+        <action
+            android:id="@+id/resultToSearch"
+            app:destination="@id/searchFragment" />
+    </fragment>
 </navigation>
-

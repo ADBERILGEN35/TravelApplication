@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -12,6 +12,10 @@
         <variable
             name="guideHorizontalAdapter"
             type="com.example.apptravel.adapter.guide.GuideHoriAdapter" />
+
+        <variable
+            name="categoryAdapter"
+            type="com.example.apptravel.adapter.guide.CategoryAdapter" />
     </data>
 
 
@@ -28,7 +32,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/source_sans_pro"
             android:gravity="top"
             android:text="@string/guide"
@@ -43,7 +47,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="100dp"
             android:gravity="top"
             android:text="@string/might_need_"
             android:textAppearance="@style/might_need_"
@@ -56,7 +60,7 @@
             android:layout_height="18dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="16dp"
             android:gravity="right|top"
             android:text="@string/see_all"
@@ -70,8 +74,8 @@
             android:layout_height="132dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            app:layout_constraintStart_toStartOf="parent"
             android:adapter="@{guideVerticalAdapter}"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/might_need_"
             tools:listitem="@layout/guide_item_vertical" />
 
@@ -95,13 +99,39 @@
             android:id="@+id/recyclerViewHori"
             android:layout_width="396dp"
             android:layout_height="170dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="294dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="340dp"
             android:adapter="@{guideHorizontalAdapter}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/might_need_"
             tools:listitem="@layout/guide_item_horizantal" />
 
+        <TextView
+            android:id="@+id/top_pick_ar"
+            android:layout_width="159dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/source_sans_pro"
+            android:gravity="top"
+            android:text="@string/top_pick_ar"
+            android:textAppearance="@style/top_pick_ar"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewHori"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCategory"
+            android:layout_width="399dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="9dp"
+            android:adapter="@{categoryAdapter}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputEditText"
+            tools:listitem="@layout/category_item" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.apptravel.R
+import com.example.apptravel.adapter.guide.CategoryAdapter
 import com.example.apptravel.adapter.guide.GuideHoriAdapter
 import com.example.apptravel.adapter.guide.GuideVerticalAdapter
 import com.example.apptravel.databinding.FragmentGuideBinding
@@ -19,6 +21,7 @@ class GuideFragment : Fragment() {
     private val viewModel: GuideViewModel by viewModels()
     private var adapterVertical: GuideVerticalAdapter = GuideVerticalAdapter(arrayListOf())
     private var adapterHori: GuideHoriAdapter = GuideHoriAdapter(arrayListOf())
+    private var adapterCategory: CategoryAdapter = CategoryAdapter(arrayListOf())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +47,7 @@ class GuideFragment : Fragment() {
         context?.let {
             getMight()
             getTopPick()
+            getCategory()
         }
 
     }
@@ -62,9 +66,20 @@ class GuideFragment : Fragment() {
         viewModel.getTopPickData().observe(viewLifecycleOwner) { topPickList ->
             adapterHori.setTravelArrayList(topPickList)
             val gridLayoutManager =
-                GridLayoutManager(context, 1, GridLayoutManager.VERTICAL, false)
+                GridLayoutManager(context, 1, GridLayoutManager.HORIZONTAL, false)
             binding.recyclerViewHori.layoutManager = gridLayoutManager
             binding.recyclerViewHori.adapter = adapterHori
+        }
+    }
+
+    private fun getCategory() {
+        viewModel.getCategory().observe(viewLifecycleOwner) { categoryList ->
+            adapterCategory.setCategoryArrayList(categoryList)
+            val gridLayoutManager =
+                GridLayoutManager(context, 1, GridLayoutManager.HORIZONTAL, false)
+            binding.recyclerCategory.layoutManager = gridLayoutManager
+            binding.recyclerCategory.adapter = adapterCategory
+
         }
     }
 

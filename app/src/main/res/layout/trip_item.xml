@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="allTripModel"
+            type="com.example.apptravel.domain.room.Travel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="358dp"
+            android:layout_height="200dp"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/imageLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/unsplash_backround"
+
+                />
+
+            <TextView
+                android:id="@+id/ho_chi_minh"
+                android:layout_width="302dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="29dp"
+                android:fontFamily="@font/source_sans_pro"
+                android:gravity="center_horizontal|top"
+                android:text="@{allTripModel.city}"
+                android:textAppearance="@style/trip_city" />
+
+            <TextView
+                android:id="@+id/wed_15_jun_"
+                android:layout_width="154dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="101dp"
+                android:layout_marginTop="101dp"
+                android:fontFamily="@font/source_sans_pro"
+                android:gravity="center_horizontal|top"
+                android:text="@string/trip_date"
+                android:textAppearance="@style/trip_date" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="18dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="168dp"
+                app:srcCompat="@drawable/bookmark_vector"
+                app:tint="#FF4760" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="16dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="256dp"
+                android:layout_marginTop="168dp"
+                android:background="@drawable/clock"
+                android:backgroundTint="@color/white" />
+
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

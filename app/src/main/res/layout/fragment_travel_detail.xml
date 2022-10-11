@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="allTravelModel"
+            type="com.example.apptravel.domain.model.AllTravelItem" />
+
+        <variable
+            name="allImageModel"
+            type="com.example.apptravel.domain.model.Image" />
+
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E5E5E5">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:downloadImage="@{allTravelModel.images}"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize8Percent_detail"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/bookmark3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="236dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/mark_backround"
+            android:src="@drawable/bookmark_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/pin_icon"
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/pin_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <ScrollView
+            android:id="@+id/ScrollView01"
+            android:layout_width="363dp"
+            android:layout_height="132dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bali_indone">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="337dp"
+                android:layout_height="134dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                android:lineSpacingExtra="5sp"
+                android:scrollbars="vertical"
+                android:text="@{allTravelModel.description}"
+                android:textAppearance="@style/description"
+                android:translationY="-2.65sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.46"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="175dp"
+            android:layout_height="38dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:lineSpacingExtra="4sp"
+            android:text="@{allTravelModel.title}"
+            android:textAppearance="@style/name"
+            android:translationY="-1.83sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+        <TextView
+            android:id="@+id/bali_indone"
+            android:layout_width="108dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text="@{allTravelModel.country}"
+            android:textAppearance="@style/bali_indone"
+            android:translationY="-0.98sp"
+            app:layout_constraintStart_toEndOf="@+id/pin_icon"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

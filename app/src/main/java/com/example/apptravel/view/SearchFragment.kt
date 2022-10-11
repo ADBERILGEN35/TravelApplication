@@ -14,7 +14,7 @@ import com.example.apptravel.adapter.search.SearchHorizontalAdapter
 import com.example.apptravel.adapter.search.SearchVerticalAdapter
 import com.example.apptravel.databinding.FragmentSearchBinding
 import com.example.apptravel.viewmodel.SearchFragmentViewModel
-import com.example.travelguideapplication.view.SearchFragmentDirections
+import com.example.apptravel.view.SearchFragmentDirections
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
@@ -74,7 +74,7 @@ class SearchFragment : Fragment() {
         searchViewModel.getNearbyData().observe(viewLifecycleOwner) { nearbyData ->
             adapterHori.setTravelArrayList(nearbyData)
             val gridLayoutManager =
-                GridLayoutManager(context, 1, GridLayoutManager.HORIZONTAL, false)
+                GridLayoutManager(context, 1, GridLayoutManager.VERTICAL, false)
             binding.recyclerViewHorizantal.layoutManager = gridLayoutManager
             binding.recyclerViewHorizantal.adapter = adapterHori
         }

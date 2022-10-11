@@ -6,7 +6,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apptravel.databinding.SearchItemVerticalBinding
 import com.example.apptravel.domain.model.AllTravelItem
-import com.example.travelguideapplication.view.SearchFragmentDirections
+import com.example.apptravel.view.SearchFragmentDirections
 
 class SearchVerticalViewHolder(
     private val travelBinding: ViewDataBinding,
@@ -20,6 +20,7 @@ class SearchVerticalViewHolder(
             binding.searchVertical.setOnClickListener {
                 Navigation.findNavController(it)
                     .navigate(SearchFragmentDirections.searchToDetail(travalDataModel))
+
             }
         }
     }

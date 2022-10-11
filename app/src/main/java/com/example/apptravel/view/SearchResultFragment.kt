@@ -14,7 +14,7 @@ import com.example.apptravel.R
 import com.example.apptravel.adapter.search.SearchHorizontalAdapter
 import com.example.apptravel.databinding.FragmentSearchResultBinding
 import com.example.apptravel.viewmodel.SearchFragmentViewModel
-import com.example.travelguideapplication.view.SearchResultFragmentArgs
+import com.example.apptravel.view.SearchResultFragmentArgs
 
 class SearchResultFragment : Fragment() {
     private lateinit var binding: FragmentSearchResultBinding

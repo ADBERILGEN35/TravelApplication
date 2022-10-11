@@ -3,6 +3,7 @@ package com.example.apptravel.utils
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.example.apptravel.domain.model.GuideCategoryItem
 import com.example.apptravel.domain.model.Image
 
 fun ImageView.loadUrl(image: String) {
@@ -20,17 +21,15 @@ fun downloadImage(view: ImageView, image: List<Image>? = null) {
     }
 }
 
-@BindingAdapter("android:downloadAll")
-fun downloadAllImage(view: ImageView, images: List<Image>? = null) {
-    images?.map {
-        view.loadUrl(it.url)
+
+@BindingAdapter("android:downloadDrawble")
+fun downloadDrawble(view: ImageView, image: GuideCategoryItem? = null) {
+
+    if (image != null) {
+        view.loadUrl(image.icon)
     }
 }
 
 
-@BindingAdapter("android:downloadAll")
-fun downloadTripImage(view: ImageView, images: List<Image>? = null) {
-    images?.map {
-        view.loadUrl(it.url)
-    }
-}
+
+

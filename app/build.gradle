@@ -40,7 +40,7 @@ android {
     }
 }
 
-
+def room_version = "2.4.3"
 def retrofitVersion = '2.9.0'
 def preferencesVersion = '1.2.0'
 def glideVersion = '4.13.2'
@@ -67,10 +67,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.0-alpha01'
     implementation 'com.sealwu.jsontokotlin:library:3.7.4'
 
-    implementation "androidx.room:room-runtime:2.2.5"
-    kapt "androidx.room:room-compiler:2.2.5"
-    implementation "androidx.room:room-ktx:2.2.5"
-    androidTestImplementation "androidx.room:room-testing:2.2.5"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+
+
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
 
