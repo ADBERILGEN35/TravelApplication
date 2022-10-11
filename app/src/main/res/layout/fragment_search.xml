@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchVerticalAdapter"
+            type="com.example.apptravel.adapter.search.SearchVerticalAdapter" />
+
+        <variable
+            name="searchHorizontalAdapter"
+            type="com.example.apptravel.adapter.search.SearchHorizontalAdapter" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E5E5E5">
+
+        <TextView
+            android:id="@+id/search"
+            android:layout_width="91dp"
+            android:layout_height="38dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/source_sans_pro"
+            android:gravity="top"
+            android:text="@string/search"
+            android:textAppearance="@style/screen_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/top_destina"
+            android:layout_width="161dp"
+            android:layout_height="26dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/source_sans_pro"
+            android:gravity="top"
+            android:text="@string/top_destina"
+            android:textAppearance="@style/search_texts"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputEditTextSearch" />
+
+        <TextView
+            android:id="@+id/nearby_attr"
+            android:layout_width="214dp"
+            android:layout_height="26dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="2dp"
+            android:gravity="top"
+            android:lineHeight="25.14px"
+            android:text="@string/nearby_attr"
+            android:textAppearance="@style/search_texts"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="396dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:adapter="@{searchVerticalAdapter}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_destina"
+            tools:listitem="@layout/search_item_vertical" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHorizantal"
+            android:layout_width="357dp"
+            android:layout_height="294dp"
+            android:layout_marginTop="5dp"
+            android:adapter="@{searchHorizontalAdapter}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nearby_attr"
+            tools:listitem="@layout/search_item_horizantal" />
+
+        <EditText
+            android:id="@+id/textInputEditTextSearch"
+            android:layout_width="380dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/edit_text_background"
+            android:clickable="true"
+            android:drawableEnd="@drawable/search_screen_icon"
+            android:hint="@string/whereIs"
+            android:imeOptions="actionSearch"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

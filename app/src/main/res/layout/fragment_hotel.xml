@@ -6,7 +6,7 @@
     <data>
         <variable
             name="travelAdapter"
-            type="com.example.travelguideapplication.adapter.TravelApiAdapter" />
+            type="com.example.apptravel.adapter.started.TravelApiAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
