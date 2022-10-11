@@ -12,13 +12,8 @@ class CategoryViewHolder(
 
     fun onBind(categoryItem: GuideCategoryItem) {
         val binding = categoryBinding as CategoryItemBinding
-
         binding.apply {
-
-
             setVariable(BR.allCategoryModel, categoryItem)
-
-
         }
     }
 }

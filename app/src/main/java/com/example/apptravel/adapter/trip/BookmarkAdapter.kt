@@ -8,32 +8,31 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apptravel.R
 import com.example.apptravel.domain.model.AllTravelItem
-import com.example.apptravel.domain.room.Travel
 
-
-class TripAdapter(
-    private var tripArrayList: ArrayList<AllTravelItem> = ArrayList()
+class BookmarkAdapter(
+    private var bookmarkArrayList: ArrayList<AllTravelItem> = ArrayList()
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val tripBinding = DataBindingUtil.inflate<ViewDataBinding>(
-            LayoutInflater.from(parent.context), R.layout.trip_item, parent, false
+        val bookmarkBinding = DataBindingUtil.inflate<ViewDataBinding>(
+            LayoutInflater.from(parent.context), R.layout.bookmark_item, parent, false
         )
-        return TripViewHolder(tripBinding)
+        return BookmarkViewHolder(bookmarkBinding)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as TripViewHolder).onBind(tripArrayList[position])
+        (holder as BookmarkViewHolder).onBind(bookmarkArrayList[position])
     }
 
     override fun getItemCount(): Int {
-        return tripArrayList.size
+        return bookmarkArrayList.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setTripArrayList(tripArrayList: List<AllTravelItem>) {
-        this.tripArrayList.clear()
-        this.tripArrayList.addAll(tripArrayList)
+    fun setBookmarkArrayList(bookmarkArrayList: List<AllTravelItem>) {
+        this.bookmarkArrayList.clear()
+        this.bookmarkArrayList.addAll(bookmarkArrayList)
         notifyDataSetChanged()
     }
+
 }

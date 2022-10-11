@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="allTravelModel"
+            type="com.example.apptravel.domain.model.AllTravelItem" />
+
+        <variable
+            name="imageModel"
+            type="com.example.apptravel.domain.model.Image" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="6dp"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:id="@+id/imageLabel"
+                android:layout_width="361dp"
+                android:layout_height="149dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:downloadImage="@{allTravelModel.images}"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/bookmark"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:layout_marginStart="314dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/black"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/mark_backround"
+                android:src="@drawable/selected_bookmark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/bookmarkCity"
+                android:layout_width="337dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="46dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@{allTravelModel.city}"
+                android:textAppearance="@style/t_n_a_danh" />
+
+            <TextView
+                android:id="@+id/bookmarkCountry"
+                android:layout_width="337dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="80dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@{allTravelModel.country}"
+                android:textAppearance="@style/t_n_t_n_c" />
+
+            <TextView
+                android:id="@+id/bookmarkCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/search_frame"
+                android:gravity="center"
+                android:text="@{allTravelModel.category}"
+                android:textAppearance="@style/hotel"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

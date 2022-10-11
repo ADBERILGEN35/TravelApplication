@@ -17,7 +17,7 @@ class SearchVerticalViewHolder(
 
         binding.apply {
             setVariable(BR.allTravelModel, travalDataModel)
-            binding.searchVertical.setOnClickListener {
+            searchVertical.setOnClickListener {
                 Navigation.findNavController(it)
                     .navigate(SearchFragmentDirections.searchToDetail(travalDataModel))
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+
+        <variable
+            name="searchVerticalAdapter"
+            type="com.example.apptravel.adapter.search.SearchVerticalAdapter" />
+
+        <variable
+            name="tripAdapter"
+            type="com.example.apptravel.adapter.trip.TripAdapter" />
+
+
+        <variable
+            name="allTravelModel"
+            type="com.example.apptravel.domain.model.AllTravelItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="358dp"
+            android:layout_height="200dp"
+            android:adapter="@{tripAdapter}"
+            android:background="@drawable/unsplash_backround"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/trip_item" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

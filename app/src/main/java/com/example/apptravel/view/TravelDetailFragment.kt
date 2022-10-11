@@ -53,6 +53,7 @@ class TravelDetailFragment : Fragment() {
             binding.allTravelModel = it.travelItem
         }
     }
+
     private fun putBookmark() {
         val bookmark = view?.findViewById<ImageButton>(R.id.bookmark3)
         bookmark?.setOnClickListener {

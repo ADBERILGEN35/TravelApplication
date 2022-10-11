@@ -9,7 +9,7 @@ import com.example.apptravel.view.FlightFragment
 import com.example.apptravel.view.HotelFragment
 import com.example.apptravel.view.TransportationsFragment
 
-class TabsAdaptor(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+class TabsAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int {
         return 4

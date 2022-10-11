@@ -8,13 +8,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.apptravel.R
 import com.example.apptravel.adapter.search.SearchHorizontalAdapter
 import com.example.apptravel.adapter.search.SearchVerticalAdapter
 import com.example.apptravel.databinding.FragmentSearchBinding
 import com.example.apptravel.viewmodel.SearchFragmentViewModel
-import com.example.apptravel.view.SearchFragmentDirections
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
@@ -22,6 +22,8 @@ class SearchFragment : Fragment() {
     private val searchViewModel: SearchFragmentViewModel by viewModels()
     private var adapterVertical: SearchVerticalAdapter = SearchVerticalAdapter(arrayListOf())
     private var adapterHori: SearchHorizontalAdapter = SearchHorizontalAdapter(arrayListOf())
+    private val navArgs: SearchFragmentArgs? by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,6 +69,7 @@ class SearchFragment : Fragment() {
                 GridLayoutManager(context, 1, GridLayoutManager.HORIZONTAL, false)
             binding.recyclerView.layoutManager = gridLayoutManager
             binding.recyclerView.adapter = adapterVertical
+
         }
     }
 

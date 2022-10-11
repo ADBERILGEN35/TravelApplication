@@ -162,8 +162,6 @@
             android:layout_marginTop="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tabsApp">
-
-
         </androidx.viewpager2.widget.ViewPager2>
 
 

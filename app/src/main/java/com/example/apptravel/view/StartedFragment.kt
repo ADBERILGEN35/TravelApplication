@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.apptravel.R
-import com.example.apptravel.adapter.tabs.TabsAdaptor
+import com.example.apptravel.adapter.tabs.TabsAdapter
 import com.example.apptravel.databinding.FragmentStartedBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -44,13 +44,15 @@ class StartedFragment : Fragment() {
         val titleList = arrayOf("All", "Flights", "Hotels", "Transportations")
         var pager = binding.viewPager
         val tl = binding.tabsApp
-        pager.adapter = TabsAdaptor(childFragmentManager, lifecycle)
+        pager.adapter = TabsAdapter(childFragmentManager, lifecycle)
         TabLayoutMediator(tl, pager) { tab, position ->
             tab.text = titleList[position]
             pager.isUserInputEnabled = false
 
         }.attach()
     }
+
+
 
 
 }

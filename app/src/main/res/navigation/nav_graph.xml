@@ -28,6 +28,9 @@
         <action
             android:id="@+id/searchToResult"
             app:destination="@id/searchResultFragment" />
+        <argument
+            android:name="searchItem"
+            app:argType="com.example.apptravel.domain.model.AllTravelItem" />
     </fragment>
     <fragment
         android:id="@+id/tripFragment"
@@ -37,15 +40,18 @@
             android:id="@+id/action_tripFragment2_to_guideFragment"
             app:destination="@id/guideFragment" />
         <action
-            android:id="@+id/action_tripFragment_to_travelDetailFragment"
+            android:id="@+id/tripToDetail"
             app:destination="@id/travelDetailFragment" />
+        <argument
+            android:name="travelArgs"
+            app:argType="com.example.apptravel.domain.model.AllTravelItem" />
     </fragment>
     <fragment
         android:id="@+id/guideFragment"
         android:name="com.example.apptravel.view.GuideFragment"
         android:label="GuideFragment" >
         <action
-            android:id="@+id/action_guideFragment_to_travelDetailFragment"
+            android:id="@+id/guideToDetail"
             app:destination="@id/travelDetailFragment" />
         <action
             android:id="@+id/action_guideFragment_to_searchResultFragment"
@@ -58,6 +64,15 @@
         <argument
             android:name="travelItem"
             app:argType="com.example.apptravel.domain.model.AllTravelItem" />
+        <action
+            android:id="@+id/detailToGuide"
+            app:destination="@id/guideFragment" />
+        <action
+            android:id="@+id/detailToTrio"
+            app:destination="@id/tripFragment" />
+        <action
+            android:id="@+id/detailToSearch"
+            app:destination="@id/searchFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchResultFragment"
@@ -69,5 +84,11 @@
         <action
             android:id="@+id/resultToSearch"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_searchResultFragment_to_guideFragment"
+            app:destination="@id/guideFragment" />
+        <action
+            android:id="@+id/resultToDetail"
+            app:destination="@id/travelDetailFragment" />
     </fragment>
 </navigation>

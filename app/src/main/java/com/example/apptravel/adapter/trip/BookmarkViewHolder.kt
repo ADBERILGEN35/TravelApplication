@@ -1,27 +1,23 @@
-package com.example.apptravel.adapter.search
+package com.example.apptravel.adapter.trip
 
-import android.widget.ImageButton
 import androidx.databinding.ViewDataBinding
 import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.RecyclerView
-import com.example.apptravel.R
-import com.example.apptravel.databinding.SearchItemHorizantalBinding
+import com.example.apptravel.databinding.BookmarkItemBinding
 import com.example.apptravel.domain.model.AllTravelItem
 import com.example.apptravel.service.TravelApi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SearchHorizantalViewHolder(
-    private val travelBinding: ViewDataBinding
+class BookmarkViewHolder(
+    private val bookmarkBinding: ViewDataBinding,
+) : RecyclerView.ViewHolder(bookmarkBinding.root) {
+    fun onBind(bookmarkDataModel: AllTravelItem) {
+        val binding = bookmarkBinding as BookmarkItemBinding
 
-) : RecyclerView.ViewHolder(travelBinding.root) {
-
-    fun onBind(travalDataModel: AllTravelItem) {
-        val binding = travelBinding as SearchItemHorizantalBinding
         binding.apply {
-            setVariable(BR.allTravelModel, travalDataModel)
-            setVariable(BR.searchHorizontalAdapter, travalDataModel)
+            setVariable(BR.allTravelModel, bookmarkDataModel)
             bookmark.setOnClickListener {
                 val id = allTravelModel?.id
                 var isBookmark = allTravelModel?.isBookmark
@@ -33,8 +29,6 @@ class SearchHorizantalViewHolder(
                                 call: Call<List<AllTravelItem>>,
                                 response: Response<List<AllTravelItem>>
                             ) {
-                                if (isBookmark == true) {
-                                }
                             }
                             override fun onFailure(call: Call<List<AllTravelItem>>, t: Throwable) {
                                 println(t.message)
@@ -42,8 +36,7 @@ class SearchHorizantalViewHolder(
                         })
                 }
             }
-        }
 
+        }
     }
 }
-

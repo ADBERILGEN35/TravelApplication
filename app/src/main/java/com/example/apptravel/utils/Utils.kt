@@ -17,7 +17,7 @@ fun ImageView.loadUrl(image: String) {
 @BindingAdapter("android:downloadImage")
 fun downloadImage(view: ImageView, image: List<Image>? = null) {
     image?.map {
-        view.loadUrl(image.get(0).url)
+        view.loadUrl(image[0].url)
     }
 }
 

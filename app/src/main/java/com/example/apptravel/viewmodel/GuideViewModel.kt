@@ -28,7 +28,7 @@ class GuideViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<List<AllTravelItem>>, t: Throwable) {
-                TODO("Not yet implemented")
+                println(t.message)
             }
 
         })
@@ -45,7 +45,7 @@ class GuideViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<List<AllTravelItem>>, t: Throwable) {
-                TODO("Not yet implemented")
+                println(t.message)
             }
 
         })
@@ -63,7 +63,7 @@ class GuideViewModel : ViewModel() {
                 }
 
                 override fun onFailure(call: Call<List<GuideCategoryItem>>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    println(t.message)
                 }
             })
         return categoryItem
