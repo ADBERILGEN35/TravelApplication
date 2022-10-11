@@ -1,5 +1,31 @@
 <resources>
-    <string name="app_name">AppTravel</string>
+    <string name="app_name">TravelGuideApplication</string>
+    <string name="deals"><b>Deals</b></string>
+    <string name="banner_head"><b>Where\'s your\nnext destination?</b></string>
+    <string name="transportations"><b>Transportations</b></string>
+    <string name="hotels"><b>Hotels</b></string>
+    <string name="flights"><b>Flights</b></string>
+    <string name="all"><b>All</b></string>
+    <string name="search"><b>Search</b></string>
+    <string name="searchResult"><b>Search Result</b></string>
+    <string name="top_destina"><b>TOP DESTINATIONS</b></string>
+    <string name="nearby_attr"><b>NEARBY ATTRACTIONS</b></string>
+    <string name="hotel">Hotel</string>
+    <string name="trip_plan"><b>Trip Plan</b></string>
+    <string name="city"><b>Tokyo</b></string>
+    <string name="country">Japan</string>
+    <string name="whereIs">Where next?</string>
+    <string name="trips"><b>Trips</b></string>
+    <string name="bookmark">Bookmark</string>
+    <string name="ho_chi_minh">Ho Chi Minh City</string>
+    <string name="trip_date">Wed, 29 Dec - 31 Dec</string>
+    <string name="guide"><b>Guide</b></string>
+    <string name="might_need_"><b>MIGHT NEED THESE</b></string>
+    <string name="seeAll"><u>See all</u></string>
+    <string name="where_do_yo">A country, a city, a place... or anything</string>
+    <string name="top_pick_ar"><b>TOP-PICK ARTICLES</b></string>
+    <string name="safe_travel"><b>Budget\nTravel</b></string>
+    <string name="see_all"><u>See all</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

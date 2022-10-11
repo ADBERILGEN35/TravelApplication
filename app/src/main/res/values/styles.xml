@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="deals">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">#181A25</item>
+    </style>
+
+    <style name="banner_head">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="all">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FF4760</item>
+    </style>
+
+    <style name="started_other_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#C2C5D6</item>
+    </style>
+
+    <style name="search_texts">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="lineHeight">25px</item>
+        <item name="android:textColor">#292C3D</item>
+    </style>
+
+
+    <style name="hotel">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="screen_text">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#292C3D</item>
+    </style>
+
+    <style name="city">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="country">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="TabLayoutTextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">20sp</item>
+        <item name="fontFamily">@font/source_sans_pro</item>
+        <item name="tabGravity">start</item>
+        <item name="tabIndicatorColor">@color/tabs_selected</item>
+        <item name="tabSelectedTextColor">@color/tabs_selected</item>
+        <item name="tabTextColor">@color/tabs_not_selected</item>
+        <item name="textStartPadding"></item>
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabMode">scrollable</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+    <style name="Theme.App" parent="Theme.MaterialComponents">
+        ...
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="selectableItemBackground">@color/tabs_selected</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorPrimary">@color/tabs_selected</item>
+        <item name="colorOnPrimary">@color/tabs_not_selected</item>
+
+    </style>
+
+    <style name="bottomNavigation">
+        <item name="android:layout_width">350dp</item>
+        <item name="selectableItemBackground">@drawable/search_frame</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:background">@drawable/lineer_backround</item>
+        <item name="android:selectableItemBackgroundBorderless">@color/black</item>
+        <item name="selectableItemBackgroundBorderless">@color/black</item>
+    </style>
+
+    <style name="trips">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FF4760</item>
+    </style>
+
+    <style name="bookmark">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#C2C5D6</item>
+    </style>
+
+    <style name="trip_city">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="trip_date">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="might_need_">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">25sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">#292C3D</item>
+    </style>
+
+    <style name="safe_travel">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="see_all">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FF4760</item>
+    </style>
+
+    <style name="t_n_a_danh">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="t_n_t_n_c">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize8Percent_detail" parent="">
+        <item name="cornerSizeBottomLeft">50dp</item>
+        <item name="cornerSizeBottomRight">50dp</item>
+    </style>
+
+    <style name="description">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#39414B</item>
+    </style>
+
+    <style name="name">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#0A2753</item>
+    </style>
+
+    <style name="bali_indone">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#39414B</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startedFragment">
+
+    <fragment
+        android:id="@+id/startedFragment"
+        android:name="com.example.travelguideapplication.view.StartedFragment"
+        android:label="StartedFragment">
+        <action
+            android:id="@+id/action_startedFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.travelguideapplication.view.SearchFragment"
+        android:label="SearchFragment">
+        <action
+            android:id="@+id/action_searchFragment_to_tripFragment"
+            app:destination="@id/tripFragment" />
+        <action
+            android:id="@+id/searchToDetail"
+            app:destination="@id/travelDetailFragment" />
+        <action
+            android:id="@+id/searchToResult"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tripFragment"
+        android:name="com.example.travelguideapplication.view.TripFragment"
+        android:label="TripFragment">
+        <action
+            android:id="@+id/action_tripFragment_to_guideFragment"
+            app:destination="@id/guideFragment" />
+        <argument
+            android:name="deneme"
+            app:argType="com.example.travelguideapplication.domain.model.alltravel.AllTravelItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.example.travelguideapplication.view.GuideFragment"
+        android:label="GuideFragment" />
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.example.travelguideapplication.view.SearchResultFragment"
+        android:label="SearchResultFragment">
+        <action
+            android:id="@+id/resultToSearch"
+            app:destination="@id/searchFragment" />
+        <argument
+            android:name="searchText"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/travelDetailFragment"
+        android:name="com.example.travelguideapplication.view.TravelDetailFragment"
+        android:label="TravelDetailFragment">
+        <argument
+            android:name="deneme"
+            app:argType="com.example.travelguideapplication.domain.model.alltravel.AllTravelItem" />
+    </fragment>
+
+</navigation>
+
