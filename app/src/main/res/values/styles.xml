@@ -63,7 +63,6 @@
         <item name="tabIndicatorColor">@color/tabs_selected</item>
         <item name="tabSelectedTextColor">@color/tabs_selected</item>
         <item name="tabTextColor">@color/tabs_not_selected</item>
-        <item name="textStartPadding"></item>
         <item name="tabIndicatorFullWidth">false</item>
         <item name="tabMode">scrollable</item>
         <item name="textAllCaps">false</item>

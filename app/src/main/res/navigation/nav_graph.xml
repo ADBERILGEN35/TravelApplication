@@ -92,11 +92,11 @@
             app:destination="@id/travelDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/tripsFragment2"
-        android:name="com.example.apptravel.view.TripsFragment"
-        android:label="TripsFragment" >
+        android:id="@+id/bookmarksFragment"
+        android:name="com.example.apptravel.view.BookmarksFragment"
+        android:label="BookmarksFragment" >
         <action
-            android:id="@+id/tripsToDetail"
+            android:id="@+id/booksToDetail"
             app:destination="@id/travelDetailFragment" />
     </fragment>
 </navigation>

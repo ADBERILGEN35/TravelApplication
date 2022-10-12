@@ -2,10 +2,12 @@ package com.example.apptravel.adapter.trip
 
 import androidx.databinding.ViewDataBinding
 import androidx.databinding.library.baseAdapters.BR
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apptravel.databinding.BookmarkItemBinding
 import com.example.apptravel.domain.model.AllTravelItem
 import com.example.apptravel.service.TravelApi
+import com.example.apptravel.view.BookmarksFragmentDirections
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

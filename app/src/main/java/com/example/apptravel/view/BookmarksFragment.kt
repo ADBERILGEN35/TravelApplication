@@ -20,7 +20,6 @@ class BookmarksFragment : Fragment() {
     private lateinit var binding: FragmentBookmarksBinding
     private val viewModel: BookmarkViewModel by viewModels()
     private var adapter: BookmarkAdapter = BookmarkAdapter()
-    lateinit var swipeToRefresh: SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
