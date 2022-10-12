@@ -58,6 +58,11 @@ class TravelDetailFragment : Fragment() {
         }
     }
 
+
+    /**
+     * Put bookmark
+     * @PUT isBookmark = true & false
+     */
     private fun putBookmark() {
         val bookmark = view?.findViewById<ImageButton>(R.id.bookmark3)
         bookmark?.setOnClickListener {

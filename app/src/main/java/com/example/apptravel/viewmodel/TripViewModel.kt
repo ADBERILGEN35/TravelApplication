@@ -3,8 +3,6 @@ package com.example.apptravel.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.apptravel.adapter.search.SearchHorizontalAdapter
-import com.example.apptravel.adapter.search.SearchVerticalAdapter
 import com.example.apptravel.domain.model.AllTravelItem
 import com.example.apptravel.service.TravelApi
 import retrofit2.Call
@@ -42,9 +40,8 @@ class TripViewModel : ViewModel() {
                 response.body()?.let { responseList ->
                     travelModel = ArrayList(responseList)
                 }
-
-
             }
+
             override fun onFailure(call: Call<List<AllTravelItem>>, t: Throwable) {
                 println(t.message)
             }

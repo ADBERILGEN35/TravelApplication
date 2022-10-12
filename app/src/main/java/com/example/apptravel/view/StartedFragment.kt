@@ -40,6 +40,10 @@ class StartedFragment : Fragment() {
         }
     }
 
+    /**
+     * View pager
+     * All,Flight,Hotels,Transportations pages viewer
+     */
     private fun viewPager() {
         val titleList = arrayOf("All", "Flights", "Hotels", "Transportations")
         var pager = binding.viewPager

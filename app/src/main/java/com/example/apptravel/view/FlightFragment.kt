@@ -46,6 +46,10 @@ class FlightFragment : Fragment() {
     }
 
 
+    /**
+     * Get flight data
+     * return value category=="flight"
+     */
     private fun getFlightData() {
         viewModel.getTravelData().observe(viewLifecycleOwner) { travelValue ->
             adapter.setTravelArrayList(travelValue)

@@ -8,11 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.apptravel.R
 import com.example.apptravel.adapter.trip.BookmarkAdapter
 import com.example.apptravel.databinding.FragmentBookmarksBinding
-import com.example.apptravel.domain.model.AllTravelItem
 import com.example.apptravel.viewmodel.BookmarkViewModel
 
 
@@ -47,7 +45,10 @@ class BookmarksFragment : Fragment() {
     }
 
 
-
+    /**
+     * Get bookmarks
+     * return value isBookmark=true
+     */
     private fun getBookmarks() {
         viewModel.getBookmarkData().observe(viewLifecycleOwner) { bookmarksValue ->
             adapter.setBookmarkArrayList(bookmarksValue)
@@ -57,7 +58,6 @@ class BookmarksFragment : Fragment() {
             binding.recyclerViewHorizantal.adapter = adapter
         }
     }
-
 
 
 }

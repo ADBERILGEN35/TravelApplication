@@ -51,6 +51,10 @@ class SearchResultFragment : Fragment() {
         getSearch()
     }
 
+    /**
+     * Get search
+     * search to searchText for city & description
+     */
     private fun getSearch() {
         searchText = args.searchText
         searchViewModel.searchData(searchText).observe(viewLifecycleOwner) { searchList ->

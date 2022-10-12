@@ -46,6 +46,10 @@ class AllTravelFragment : Fragment() {
         getTravelData()
     }
 
+    /**
+     * Get travel data
+     * getAllTravelList()
+     */
     private fun getTravelData() {
         startedFragmentViewModel.getTravelData().observe(viewLifecycleOwner) { travelValue ->
             adapter.setTravelArrayList(travelValue)

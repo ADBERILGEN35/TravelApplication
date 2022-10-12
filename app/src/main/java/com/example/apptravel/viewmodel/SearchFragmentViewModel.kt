@@ -55,6 +55,14 @@ class SearchFragmentViewModel : ViewModel() {
         return nearbyValue
     }
 
+
+    /**
+     * Search data
+     *
+     * @param searchText
+     * search to searchText title & description & category || lowercase
+     * @return searchValue
+     */
     fun searchData(searchText: String): LiveData<List<AllTravelItem>> {
         TravelApi.retrofitService.getAllList().enqueue(object : Callback<List<AllTravelItem>> {
             override fun onResponse(

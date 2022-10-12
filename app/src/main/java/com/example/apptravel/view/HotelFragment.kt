@@ -42,11 +42,14 @@ class HotelFragment : Fragment() {
         context?.let {
 
         }
-        getFlightData()
+        getHotelData()
     }
 
-
-    private fun getFlightData() {
+    /**
+     * Get Might data
+     * return value category=="hotel"
+     */
+    private fun getHotelData() {
         viewModel.getTravelData().observe(viewLifecycleOwner) { travelValue ->
             adapter.setTravelArrayList(travelValue)
             val gridLayoutManager =

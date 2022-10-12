@@ -72,6 +72,10 @@ class SearchFragment : Fragment() {
         }
     }
 
+    /**
+     * Get Nearby data
+     * return value category=="nearby"
+     */
     private fun getNearby() {
         searchViewModel.getNearbyData().observe(viewLifecycleOwner) { nearbyData ->
             adapterHori.setTravelArrayList(nearbyData)

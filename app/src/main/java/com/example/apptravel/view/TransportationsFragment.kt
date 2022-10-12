@@ -1,11 +1,11 @@
 package com.example.apptravel.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.apptravel.R
@@ -42,11 +42,16 @@ class TransportationsFragment : Fragment() {
         context?.let {
 
         }
-        getFlightData()
+        getTransportationsData()
     }
 
 
-    private fun getFlightData() {
+    /**
+     * Get Nearby data
+     * return value category=="transportations"
+     */
+
+    private fun getTransportationsData() {
         viewModel.getTravelData().observe(viewLifecycleOwner) { travelValue ->
             adapter.setTravelArrayList(travelValue)
             val gridLayoutManager =

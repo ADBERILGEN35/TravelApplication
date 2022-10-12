@@ -57,6 +57,13 @@ class TripFragment : Fragment() {
     }
 
 
+    /**
+     * Show bottom sheet
+     * Spinner City List
+     * Selected City Item
+     * set.Text Days
+     * Room Database Travel item created
+     */
     private fun showBottomSheet() {
         var listTrip: AllTravelItem
         val dialog = context?.let { BottomSheetDialog(it) }

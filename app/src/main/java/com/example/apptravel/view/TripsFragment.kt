@@ -32,7 +32,6 @@ class TripsFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
@@ -40,20 +39,19 @@ class TripsFragment : Fragment() {
 
     private fun init() {
         context?.let {
-
             getDatabaseData()
-
         }
     }
 
+
+    /**
+     * Get Room database Travel data
+     */
     private fun getDatabaseData() {
         val travelDatabase: TravelDatabase? =
             TravelDatabase.getTravelDatabase(requireContext())
-
         val list: ArrayList<Travel> = travelDatabase?.travelDao()
             ?.getAllTravel() as ArrayList<Travel>
-
-
         adapter.setDatabaseArrayList(list)
         val gridLayoutManager =
             GridLayoutManager(context, 1, GridLayoutManager.VERTICAL, false)
@@ -63,23 +61,3 @@ class TripsFragment : Fragment() {
     }
 }
 
-
-/*
-val id = allTravelModel?.id
-var isBookmark = allTravelModel?.isBookmark
-isBookmark = isBookmark != true
-if (id != null) {
-    TravelApi.retrofitService.putBookmark(id, isBookmark)
-        .enqueue(object : Callback<List<AllTravelItem>> {
-            override fun onResponse(
-                call: Call<List<AllTravelItem>>,
-                response: Response<List<AllTravelItem>>
-            ) {
-                if (isBookmark == true) {
-                }
-            }
-
-            override fun onFailure(call: Call<List<AllTravelItem>>, t: Throwable) {
-                println(t.message)
-            }
-        })*/

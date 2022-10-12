@@ -58,6 +58,10 @@ class GuideFragment : Fragment() {
 
     }
 
+    /**
+     * Get Might data
+     * return value category=="might"
+     */
     private fun getMight() {
         viewModel.getMightData().observe(viewLifecycleOwner) { mighList ->
             adapterVertical.setTravelArrayList(mighList)
@@ -68,6 +72,11 @@ class GuideFragment : Fragment() {
         }
     }
 
+
+    /**
+     * Get Top Pick data
+     * return value category=="toppick"
+     */
     private fun getTopPick() {
         viewModel.getTopPickData().observe(viewLifecycleOwner) { topPickList ->
             adapterHori.setTravelArrayList(topPickList)
