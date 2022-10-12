@@ -32,6 +32,10 @@ class TravelDetailFragment : Fragment() {
             container,
             false
         )
+        binding.buttonBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
         return binding.root
     }
 

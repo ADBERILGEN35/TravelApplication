@@ -16,11 +16,13 @@
         android:layout_marginBottom="3dp"
         android:paddingTop="3dp">
 
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="3dp"
             app:cardCornerRadius="6dp"
+            android:backgroundTint="#E5E5E5"
             app:cardUseCompatPadding="true">
 
             <ImageView
