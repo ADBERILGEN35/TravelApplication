@@ -48,6 +48,54 @@
 
 
         <TextView
+            android:id="@+id/flights2"
+            android:layout_width="49dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal|top"
+            android:text="@string/flights"
+            android:textAppearance="@style/flights"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFly" />
+
+        <TextView
+            android:id="@+id/hotels"
+            android:layout_width="49dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal|top"
+            android:text="@string/hotels"
+            android:textAppearance="@style/flights"
+            app:layout_constraintStart_toEndOf="@+id/flights2"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFly" />
+
+        <TextView
+            android:id="@+id/hotels2"
+            android:layout_width="49dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="158dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal|top"
+            android:text="@string/cars"
+            android:textAppearance="@style/flights"
+            app:layout_constraintStart_toEndOf="@+id/flights2"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFly" />
+
+        <TextView
+            android:id="@+id/hotels3"
+            android:layout_width="49dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="262dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal|top"
+            android:text="@string/taxi"
+            android:textAppearance="@style/flights"
+            app:layout_constraintStart_toEndOf="@+id/flights2"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFly" />
+
+        <TextView
             android:id="@+id/banner_head"
             android:layout_width="251dp"
             android:layout_height="76dp"

@@ -12,7 +12,7 @@
             android:id="@+id/action_startedFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
         <action
-            android:id="@+id/action_startedFragment_to_travelDetailFragment"
+            android:id="@+id/startedToDetail"
             app:destination="@id/travelDetailFragment" />
     </fragment>
     <fragment
@@ -54,7 +54,7 @@
             android:id="@+id/guideToDetail"
             app:destination="@id/travelDetailFragment" />
         <action
-            android:id="@+id/action_guideFragment_to_searchResultFragment"
+            android:id="@+id/guideToResult"
             app:destination="@id/searchResultFragment" />
     </fragment>
     <fragment
@@ -89,6 +89,14 @@
             app:destination="@id/guideFragment" />
         <action
             android:id="@+id/resultToDetail"
+            app:destination="@id/travelDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tripsFragment2"
+        android:name="com.example.apptravel.view.TripsFragment"
+        android:label="TripsFragment" >
+        <action
+            android:id="@+id/tripsToDetail"
             app:destination="@id/travelDetailFragment" />
     </fragment>
 </navigation>

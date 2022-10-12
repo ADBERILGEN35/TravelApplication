@@ -27,7 +27,7 @@
 
 
             <ImageView
-                android:id="@+id/unsplash_5f"
+                android:id="@+id/guideVertiImg"
                 android:layout_width="108dp"
                 android:layout_height="125dp"
                 android:layout_alignParentLeft="true"

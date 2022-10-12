@@ -11,7 +11,7 @@
 
         <variable
             name="tripAdapter"
-            type="com.example.apptravel.adapter.trip.TripAdapter" />
+            type="com.example.apptravel.adapter.trip.TripsAdapter" />
 
 
         <variable
@@ -26,11 +26,9 @@
         android:layout_marginBottom="3dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/recyclerViewTrips"
             android:layout_width="358dp"
             android:layout_height="200dp"
-            android:adapter="@{tripAdapter}"
-            android:background="@drawable/unsplash_backround"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"

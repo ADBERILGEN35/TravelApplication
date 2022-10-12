@@ -32,5 +32,8 @@ data class Travel(
     @ColumnInfo(name = "travelBookmark")
     var travelBookmark: Boolean,
 
+    @ColumnInfo(name = "days")
+    var days: String,
+
 
     )

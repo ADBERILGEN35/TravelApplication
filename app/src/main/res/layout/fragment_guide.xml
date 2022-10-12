@@ -80,7 +80,7 @@
             tools:listitem="@layout/guide_item_vertical" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
+            android:id="@+id/textInputEditTextGuide"
             android:layout_width="380dp"
             android:layout_height="40dp"
             android:layout_marginTop="25dp"
@@ -130,7 +130,7 @@
             android:adapter="@{categoryAdapter}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputEditText"
+            app:layout_constraintTop_toBottomOf="@+id/textInputEditTextGuide"
             tools:listitem="@layout/category_item" />
 
 

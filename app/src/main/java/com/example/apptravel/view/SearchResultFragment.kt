@@ -12,6 +12,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.apptravel.R
 import com.example.apptravel.adapter.search.SearchHorizontalAdapter
+import com.example.apptravel.adapter.search.SearchResultAdapter
 import com.example.apptravel.databinding.FragmentSearchResultBinding
 import com.example.apptravel.viewmodel.SearchFragmentViewModel
 import com.example.apptravel.view.SearchResultFragmentArgs
@@ -19,7 +20,7 @@ import com.example.apptravel.view.SearchResultFragmentArgs
 class SearchResultFragment : Fragment() {
     private lateinit var binding: FragmentSearchResultBinding
     private val searchViewModel: SearchFragmentViewModel by viewModels()
-    private var adapterHori: SearchHorizontalAdapter = SearchHorizontalAdapter(arrayListOf())
+    private var adapterHori: SearchResultAdapter = SearchResultAdapter(arrayListOf())
     private val args: SearchResultFragmentArgs by navArgs()
     private lateinit var searchText: String
 
@@ -31,7 +32,7 @@ class SearchResultFragment : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_search_result, container, false)
         binding.buttonBack.setOnClickListener {
-            findNavController().navigate(R.id.resultToSearch)
+            requireActivity().onBackPressed()
         }
 
         return binding.root

@@ -7,35 +7,33 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apptravel.R
-import com.example.apptravel.domain.model.AllTravelItem
 import com.example.apptravel.domain.room.Travel
 
-
-class TripAdapter(
-    private var tripArrayList: ArrayList<AllTravelItem> = ArrayList(),
+class TripsAdapter(
+    private var databaseArrayList: ArrayList<Travel> = ArrayList(),
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val tripBinding = DataBindingUtil.inflate<ViewDataBinding>(
+        val tripsBinding = DataBindingUtil.inflate<ViewDataBinding>(
             LayoutInflater.from(parent.context), R.layout.trip_item, parent, false
         )
-        return TripViewHolder(tripBinding)
+        return TripsViewHolder(tripsBinding)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as TripViewHolder).onBind(tripArrayList[position])
+        (holder as TripsViewHolder).onBind(databaseArrayList[position])
+
     }
 
     override fun getItemCount(): Int {
-        return tripArrayList.size
+        return databaseArrayList.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setTripArrayList(tripArrayList: List<AllTravelItem>) {
-        this.tripArrayList.clear()
-        this.tripArrayList.addAll(tripArrayList)
+    fun setDatabaseArrayList(tripArrayList: ArrayList<Travel>) {
+        this.databaseArrayList.clear()
+        this.databaseArrayList.addAll(tripArrayList)
         notifyDataSetChanged()
     }
-
-
 }
+

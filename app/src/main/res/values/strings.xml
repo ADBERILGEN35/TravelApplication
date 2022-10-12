@@ -4,6 +4,8 @@
     <string name="banner_head"><b>Where\'s your\nnext destination?</b></string>
     <string name="transportations"><b>Transportations</b></string>
     <string name="hotels"><b>Hotels</b></string>
+    <string name="cars"><b>Cars</b></string>
+    <string name="taxi"><b>Taxi</b></string>
     <string name="flights"><b>Flights</b></string>
     <string name="all"><b>All</b></string>
     <string name="search"><b>Search</b></string>

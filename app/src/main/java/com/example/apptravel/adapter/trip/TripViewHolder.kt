@@ -16,9 +16,6 @@ class TripViewHolder(
         binding.apply {
 
             setVariable(BR.allTripModel, tripDataModel)
-            imageLabel.setOnClickListener {
-
-            }
 
 
         }

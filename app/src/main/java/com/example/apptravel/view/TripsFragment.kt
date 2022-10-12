@@ -1,60 +1,85 @@
 package com.example.apptravel.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.apptravel.R
+import com.example.apptravel.adapter.trip.TripsAdapter
+import com.example.apptravel.databinding.FragmentTripsBinding
+import com.example.apptravel.domain.room.Travel
+import com.example.apptravel.domain.room.TravelDatabase
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TripsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TripsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentTripsBinding
+    private var adapter: TripsAdapter = TripsAdapter()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trips, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_trips,
+            container,
+            false
+        )
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TripsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TripsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        init()
+    }
+
+    private fun init() {
+        context?.let {
+
+            getDatabaseData()
+
+        }
+    }
+
+    private fun getDatabaseData() {
+        val travelDatabase: TravelDatabase? =
+            TravelDatabase.getTravelDatabase(requireContext())
+
+        val list: ArrayList<Travel> = travelDatabase?.travelDao()
+            ?.getAllTravel() as ArrayList<Travel>
+
+
+        adapter.setDatabaseArrayList(list)
+        val gridLayoutManager =
+            GridLayoutManager(context, 1, GridLayoutManager.VERTICAL, false)
+        binding.recyclerViewTrips.layoutManager = gridLayoutManager
+        binding.recyclerViewTrips.adapter = adapter
+        println(list)
     }
 }
+
+
+/*
+val id = allTravelModel?.id
+var isBookmark = allTravelModel?.isBookmark
+isBookmark = isBookmark != true
+if (id != null) {
+    TravelApi.retrofitService.putBookmark(id, isBookmark)
+        .enqueue(object : Callback<List<AllTravelItem>> {
+            override fun onResponse(
+                call: Call<List<AllTravelItem>>,
+                response: Response<List<AllTravelItem>>
+            ) {
+                if (isBookmark == true) {
+                }
+            }
+
+            override fun onFailure(call: Call<List<AllTravelItem>>, t: Throwable) {
+                println(t.message)
+            }
+        })*/

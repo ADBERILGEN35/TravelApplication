@@ -22,7 +22,6 @@ class SearchFragment : Fragment() {
     private val searchViewModel: SearchFragmentViewModel by viewModels()
     private var adapterVertical: SearchVerticalAdapter = SearchVerticalAdapter(arrayListOf())
     private var adapterHori: SearchHorizontalAdapter = SearchHorizontalAdapter(arrayListOf())
-    private val navArgs: SearchFragmentArgs? by navArgs()
 
 
     override fun onCreateView(

@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.apptravel.R
 import com.example.apptravel.adapter.guide.CategoryAdapter
@@ -31,6 +31,12 @@ class GuideFragment : Fragment() {
             inflater,
             R.layout.fragment_guide, container, false
         )
+        binding.textInputEditTextGuide.setOnClickListener {
+            var text = binding.textInputEditTextGuide.text
+            val action = GuideFragmentDirections.guideToResult(text.toString())
+            binding.textInputEditTextGuide.text?.clear()
+            findNavController().navigate(action)
+        }
         return binding.root
     }
 

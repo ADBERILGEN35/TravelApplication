@@ -5,6 +5,7 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.example.apptravel.domain.model.GuideCategoryItem
 import com.example.apptravel.domain.model.Image
+import com.example.apptravel.domain.room.Travel
 
 fun ImageView.loadUrl(image: String) {
     image.let {
@@ -21,12 +22,27 @@ fun downloadImage(view: ImageView, image: List<Image>? = null) {
     }
 }
 
+@BindingAdapter("android:downloadDatabase")
+fun downloadDatabase(view: ImageView, image: Travel? = null) {
+    if (image != null) {
+        view.loadUrl(image.travelImages)
+    }
+}
+
 
 @BindingAdapter("android:downloadDrawble")
 fun downloadDrawble(view: ImageView, image: GuideCategoryItem? = null) {
 
     if (image != null) {
         view.loadUrl(image.icon)
+    }
+}
+
+@BindingAdapter("android:downloadString")
+fun downloadString(view: ImageView, image: String? = null) {
+
+    if (image != null) {
+        view.loadUrl(image)
     }
 }
 

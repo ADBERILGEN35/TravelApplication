@@ -26,12 +26,18 @@
 
 
             <ImageView
-                android:id="@+id/imageLabel"
+                android:id="@+id/tripsImg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/unsplash_backround"
-
-                />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/started_item"
+                android:downloadString="@{allTripModel.travelImages}"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ho_chi_minh"
@@ -43,21 +49,11 @@
                 android:fontFamily="@font/source_sans_pro"
                 android:gravity="center_horizontal|top"
                 android:text="@{allTripModel.city}"
-                android:textAppearance="@style/trip_city" />
-
-            <TextView
-                android:id="@+id/wed_15_jun_"
-                android:layout_width="154dp"
-                android:layout_height="23dp"
-                android:layout_marginStart="101dp"
-                android:layout_marginTop="101dp"
-                android:fontFamily="@font/source_sans_pro"
-                android:gravity="center_horizontal|top"
-                android:text="@string/trip_date"
-                android:textAppearance="@style/trip_date" />
+                android:textAppearance="@style/trip_city"
+                android:textColor="#ff0000 " />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/imageButtonDelete"
                 android:layout_width="18dp"
                 android:layout_height="21dp"
                 android:layout_marginStart="11dp"
@@ -75,6 +71,14 @@
                 android:background="@drawable/clock"
                 android:backgroundTint="@color/white" />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="285dp"
+                android:layout_marginTop="168dp"
+                android:text="@{allTripModel.days}"
+                android:textColor="#ff0000 " />
 
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

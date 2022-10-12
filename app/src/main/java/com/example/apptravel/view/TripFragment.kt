@@ -5,10 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
+import android.widget.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -27,7 +24,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 class TripFragment : Fragment() {
     private lateinit var binding: FragmentTripBinding
     private val viewModel: TripViewModel by viewModels()
-    private var travelModel = ArrayList<AllTravelItem>()
     private var adapter: TripAdapter = TripAdapter(arrayListOf())
 
     override fun onCreateView(
@@ -100,10 +96,13 @@ class TripFragment : Fragment() {
                                     listTrip.city,
                                     listTrip.images[0].url,
                                     listTrip.isBookmark,
+                                    view.findViewById<EditText>(R.id.editTextDay).text.toString()+" days"
                                 )
                                 travelDatabase?.travelDao()?.insert(travel)
                                 dialog?.dismiss()
+
                             }
+
                         }
 
                         override fun onNothingSelected(p0: AdapterView<*>?) {
