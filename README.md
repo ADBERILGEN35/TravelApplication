@@ -24,3 +24,9 @@ Started Page             |  Search Page             |  Trip Page
 Bookmark Page             |  Guide Page             |  Trip Page
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/83397231/195251690-37e4b14e-6b91-4b8a-90dd-418a11918840.png)  |  ![](https://user-images.githubusercontent.com/83397231/195251908-02412264-aa31-4a2c-9609-dd5e29d9ec72.png)  |  ![](https://user-images.githubusercontent.com/83397231/195252202-f8bf4257-4a01-4a64-9c7b-b436d7b5ca70.png)
+
+
+https://user-images.githubusercontent.com/83397231/195255541-2023b646-e143-4782-b9a1-e2fd1be64b79.mp4
+
+
+
